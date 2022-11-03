@@ -1,0 +1,47 @@
+.steps {
+  color: #381D59;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  .step {
+    display: flex;
+    float: none;
+    // flex-direction: row;
+    align-items: center;
+    height: 25px;
+    cursor: pointer;
+
+    p {
+      float: none;
+      margin-left: 1.2rem;
+    }
+  }
+
+  .step:hover {
+    text-decoration: underline;
+  }
+
+  border-radius: 20px;
+
+  .step__verticalLine {
+    height: 3rem;
+    width: 3px;
+    margin-left: 13.5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .empTypP {
+    color: #381D59;
+    margin-left: 50px;
+    z-index: -100;
+    float: left;
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+
+  .empduration {
+    color: gray;
+    font-size: 0.6rem;
+  }
+}

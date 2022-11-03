@@ -1,0 +1,104 @@
+@import '../../Variables.scss';
+@import '../../Properties.scss';
+
+.sidebar {
+    max-width: 300px;
+    min-width: 300px;
+    transition: all 0.3s;
+    z-index: 4;
+
+    .sidebar__content {
+        background: linear-gradient(180deg, #381D59 0%, #AB70CA 100%);
+        min-height: 100%;
+        max-width: 300px;
+        min-width: 300px;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        .sidebar__logout {
+            position: fixed;
+            left: 30px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            color: #FFFFFF;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            width: 220px;
+            transition: all 0.3s;
+            @include animate-hover;
+
+            p {
+                margin-left: 30px;
+            }
+        }
+
+        .sidebar__logout:hover {
+            background: #00000023;
+        }
+
+        .tabs {
+            text-decoration: none;
+            width: 100%;
+            @include animate-hover;
+            div {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                color: #FFFFFF;
+                padding: 8px;
+                padding-left: 40px;
+            }
+            p {
+                margin-left: 30px;
+            }
+        }
+
+        .active {
+            border-left: 5px solid #FA8A8A;
+            div {
+                svg > path {
+                    fill: #FA8A8A;
+                }
+                p {
+                    color: #FA8A8A;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        margin-left: -300px;
+        position: fixed;
+        .sidebar__logout {
+            left: -300px !important;
+        }
+    }
+    .sidebar.active {
+        margin-left: 0;
+        .sidebar__logout {
+            left: 30px !important;
+        }
+    }
+}
+.tabs:hover {
+    border-left: 5px solid #FA8A8A;
+    @include animate-hover;
+    div {
+        svg > path {
+            fill: #FA8A8A;
+        }
+        p {
+            color: #FA8A8A;
+        }
+    }
+}

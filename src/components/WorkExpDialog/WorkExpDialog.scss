@@ -1,0 +1,185 @@
+@import '../../Variables.scss';
+@import '../../Properties.scss';
+
+.work-exp-form-div{
+    margin: auto;
+    position: absolute;
+    z-index: 1;
+    width: 450px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    .MuiCircularProgress-root {
+      height: 12px !important;
+      width: 12px !important;
+      margin-left: 10px;
+    }
+
+    .close-icon{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      color:#898989;
+      cursor: pointer;
+    }
+
+    .e-dlg-header-content {
+      padding: 0 30px;
+      padding-top: 30px;
+    }
+
+    .e-dlg-header{
+      margin: 0;
+      color:#898989;
+      @include font-poppin;
+      font-weight: 500;
+      font-size: 10px;
+    }
+
+    form{
+      padding: 30px;
+      .input-div{
+        box-sizing: border-box;
+        margin-bottom: 15px;
+        label{
+          color:#727272;
+          @include font-poppin;
+          font-weight: 500;
+          font-size: 14px;
+        }
+
+        .input-box{
+          width: 100%;
+          box-sizing: border-box;
+          border: 1.5px solid #727272;
+          font-size: 14px;
+          font-weight: 500;
+          padding: 5px 10px;
+          border-radius: 4px;
+          @include font-poppin;
+          &:focus{
+            outline: none;
+            border-color: $mhp-btn-normal-purple;
+          }
+        }
+
+        .picker-icon{
+          cursor: pointer;
+          margin-right: 5px;
+          color:#727272;
+
+          &:hover{
+            color: $mhp-btn-normal-purple;
+          }
+        }
+
+        .date-div{
+          display: flex;
+          position: relative;
+          width: 100%;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-evenly;
+          border: 1.5px solid #727272;
+          border-radius: 4px;
+          gap: 20px;
+          input{
+            border: none;
+            &:focus{
+              outline: none;
+            }
+          }
+
+          &:focus-within{
+            border-color: $mhp-btn-normal-purple;
+            .picker-icon{
+              color: $mhp-btn-normal-purple;
+            }
+          }
+        }
+
+        &:focus-within{
+          label{
+            color: $mhp-btn-normal-purple;
+          }
+        }
+      }
+
+      .disabled-div{
+        pointer-events:none;
+        label{
+          color: #72727231 !important;
+        }
+        div{
+          border-color: #72727231 !important;
+        }
+        .picker-icon{
+          color: #72727231 !important;
+        }
+      }
+
+      .checkbox-div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .btn-div{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        //justify-content: space-between;
+        align-items: center;
+      }
+
+      
+
+      button{
+        @include btn-style;
+        font-weight: 500;
+        font-size: 14px;
+        padding: 5px 15px;
+        display: flex;
+        flex-direction: 'row';
+        align-items: center;
+        justify-content: flex-start;
+        gap: 5px;
+      }
+
+    }
+
+
+    // .month-year-picker{
+    //   position: absolute;
+    //   z-index: 2;
+    // }
+    .e-calendar .e-content td.e-focused-date.e-today span.e-day {
+      background-color: $mhp-btn-normal-purple;
+      color: #fff;
+    }
+    .e-calendar .e-btn.e-today.e-flat.e-primary, .e-calendar .e-css.e-btn.e-today.e-flat.e-primary {
+      border: 0;
+      display: none;
+    }
+
+    .e-calendar {
+      position: absolute;
+      bottom: 35px;
+      right: 0px;
+      z-index: 2;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    } 
+    @media screen and (max-width: 910px) {
+      width: 45vw;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 80vw;
+    }
+    
+  }
+
+  

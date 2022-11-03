@@ -1,0 +1,172 @@
+$gray-theme-color: #898989;
+$gray-input-color: #A9A9A9;
+
+.editProfilePage {
+  width: 100%;
+  padding: 60px 80px;
+
+  .MuiCircularProgress-root {
+    height: 12px !important;
+    width: 12px !important;
+    margin-left: 10px;
+  }
+
+  @media screen and (max-width: 640px) {
+    padding: 3.5rem 40px;
+  }
+
+  .editProfilePage__form {
+    width: 100%;
+
+    button{
+      background: #AB70CA;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      font-size: 18px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  }
+  
+  .overview__heading {
+    color: #381D59;
+    font-size:35px;
+    font-weight: bold;
+  }
+
+  .overview__tagline {
+    color : $gray-theme-color;
+    font-size: 1em;
+    font-weight: bold;
+    
+    @media screen and (max-width: 640px) {
+      display: none;
+    }
+  }
+
+  .editProfile__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10px 0;
+    .editProfile__input {
+      width: 50%;
+    }
+
+    @media screen and (max-width: 640px) {
+      .editProfile__input {
+        width: 100%;
+      }
+    }
+  }
+
+  .editProfile__image {
+    position: relative;
+    .image-size {
+      border-radius: 15px;
+      height: 170px;
+      width: 170px;
+      object-fit: cover;
+    
+      @media screen and (max-width: 640px) {
+        height: 120px;
+        width: 120px;
+      }
+    }
+
+    .image-edit {
+      background: #AB70CA;
+      border: none;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 80%;
+      left: 85%;
+      border-radius: 100%;
+      height: 40px;
+      width: 40px;
+
+      @media screen and (max-width: 640px) {
+        height: 35px !important;
+        width: 35px !important;
+        top: 70%;
+        left: 80%;
+      }
+    }
+  }
+
+  .editProfile__specialization {
+    padding: 10px 0;
+  }
+
+  .editProfile__description {
+    padding: 10px 0;
+  }
+
+  .input-control-field {
+    width: 90%;
+    background-color: #FBF2F4;
+    border: 2px solid $gray-input-color;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 7px;
+    font-family: Poppins;
+  }
+
+  .input-control-chip-field {
+    width: 94%;
+    background-color: #FBF2F4;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 7px;
+    * {
+      font-family: Poppins;
+    }
+  }
+
+  .about {
+    font-size: 24px;
+    font-weight: 700;
+    color: $gray-theme-color;
+  }
+
+  .specialization__field {
+    margin-top: 8px;
+    * {
+      font-family: Poppins;
+    }
+  }
+
+  .specialization {
+    background: #FFFFFF;
+    border: 1px solid #AB70CA;
+    box-sizing: border-box;
+    border-radius: 16px;
+    font-size: 19.32px;
+    font-weight: 500;
+    color: #AA66CC;
+  }
+
+  .description {
+    width: 100%;
+    height: 200px;
+    border: 2px solid #A9A9A9;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-family: Poppins;
+  }
+}

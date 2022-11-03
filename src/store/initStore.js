@@ -1,6 +1,6 @@
 import throttle from 'lodash/throttle';
 import { configureStore } from '@reduxjs/toolkit';
-import reducer from './reducers/index';
+import reducer from './reducers';
 import { loadState, saveState } from './localStorage';
 
 const initStore = () => {
@@ -13,6 +13,10 @@ const initStore = () => {
 
   store.subscribe(throttle(() => {
     saveState({
+      schedules: store.getState().schedules,
+      coupons: store.getState().coupons,
+      workExp: store.getState().workExp,
+      mhps: store.getState().mhps,
     });
   }, 1000));
 

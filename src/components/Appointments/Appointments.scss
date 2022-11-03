@@ -1,0 +1,197 @@
+.appointment {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.appointmentBar{
+    width: 100%;
+    margin: 10px 0;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    @media screen and (max-width: 820px) {
+      padding: 20px;
+    }
+
+    h6 {
+      font-family: 'poppins';
+      color: #AB70CA;
+      font-size: 12px;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    .MuiAvatar-root {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+    }
+
+    .clientDetails{
+      width: 280px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: row;
+      gap: 35px;
+      @media screen and (max-width: 820px) {
+        gap: 20px;
+        justify-content: center;
+      }
+      h2{
+        font-family: 'poppins';
+        font-size: 22px;
+        color: #727272;
+        font-weight: bold;
+        @media screen and (max-width: 820px) {
+          font-size: 18px;
+        }
+      }
+    }
+    .timings{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h2{
+          margin: 5px;
+          font-size: 22px;
+          color: #727272;
+          font-weight: 600;
+          @media screen and (max-width: 820px) {
+            font-size: 18px;
+          }
+      }
+      p{
+        color: #AB70CA;
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: underline;
+        cursor: pointer;
+        margin: 0;
+      }
+    }
+    button{
+        background: #AB70CA;
+        border: none;
+        padding: 10px;
+        border-radius: 7px;
+        a {
+          text-decoration: none;
+          color: white;
+          font-weight: 600;
+          font-size: 14px;
+          @media screen and (max-width: 820px) {
+            font-size: 12px;
+          }
+        }
+    }
+    
+    .join {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      .addToCalendar {
+        background-color: transparent;
+        border: none;
+        color: #AB70CA;
+        cursor: pointer;
+      }
+    }
+  }
+
+@media screen and (max-width: 800px) {
+  .appointmentBar{
+    flex-direction: column;
+    .join {
+      width: 100%;
+      padding-top: 15px;
+      button {
+        width: 80%;
+      }
+      .addToCalendar {
+        width: 15%;
+      }
+    }
+  }
+}
+
+.reschedule__modal {
+  .modal__clientProfile {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    img {
+      height: 60px;
+      width: 60px;
+      border-radius: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .modal__clientSchedule {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+
+    h4, h5, svg {
+      color: #727272;
+      text-align: center;
+    }
+
+    .modal__clientTime {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 5px;
+      .modal__timeBar {
+        width: 10px;
+        height: 1px;
+        background-color: #000000;
+      }
+      h5 {
+        background-color: #DCDCDC;
+        border-radius: 5px;
+        padding: 2px 7px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .rescheduleModal__button {
+    width: 100%;
+    margin-left: 0px !important;
+
+    .MuiCircularProgress-root {
+      height: 12px !important;
+      width: 12px !important;
+      margin-left: 10px;
+    }
+  }
+}
+
+.e-dialog .e-dlg-header-content {
+  background-color: #FBF2F4;
+  padding: 12px 25px !important;
+  border-radius: 6px 6px 0 0 !important;
+}
+
+.e-dialog .e-footer-content {
+  padding: 12px 25px !important;
+}
+
+.e-dlg-container.e-dlg-center-center {
+  position: fixed !important;
+}

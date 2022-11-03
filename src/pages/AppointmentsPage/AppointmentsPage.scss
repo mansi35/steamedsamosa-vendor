@@ -1,0 +1,56 @@
+.AllAppointments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+    padding: 60px 80px;
+    overflow-x: hidden;
+    @media screen and (max-width: 800px) {
+        padding: 60px 20px;
+    }
+    .Appointments {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .Appointments > div {
+        width: 100%;
+    }
+    h1 {
+        font-size: 35px;
+        text-align: left;
+        font-weight: bold;
+        color: #381D59;
+    }
+    .appointments__navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @media screen and (max-width: 800px) {
+            flex-direction: column-reverse;
+        }
+        .appointments__links{
+            display: flex;
+            flex-direction: row;
+            font-weight: bold;
+            gap: 1rem;
+            span {
+                padding: 5px 2px;
+                margin: 5px 0;
+                color: #381D59;
+            }
+            span:hover {
+                cursor: pointer;
+                border-bottom: 3px solid #381D59;
+            }
+            span.active {
+                border-bottom: 3px solid #381D59;
+            }
+        }
+    }
+    .e-input-group.e-control-wrapper.e-date-wrapper {
+        width: 130px !important;
+        height: fit-content;
+    }
+}
