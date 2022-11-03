@@ -14,9 +14,7 @@ const initStore = () => {
   store.subscribe(throttle(() => {
     saveState({
       schedules: store.getState().schedules,
-      coupons: store.getState().coupons,
       workExp: store.getState().workExp,
-      mhps: store.getState().mhps,
     });
   }, 1000));
 

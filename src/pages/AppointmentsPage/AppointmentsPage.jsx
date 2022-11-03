@@ -6,8 +6,6 @@ import moment from 'moment';
 import { addClass } from '@syncfusion/ej2-base';
 import Appointment from '../../components/Appointments/Appointments';
 import './AppointmentsPage.scss';
-import RequestToReschedule from '../../components/Notifications/RequestToReschedule';
-import RescheduleAccept from '../../components/Notifications/RescheduleAccept';
 
 export default function AppointmentsPage() {
   const { schedules } = useSelector((state) => state.schedules);
@@ -15,7 +13,6 @@ export default function AppointmentsPage() {
   const [pastSessions, setPastSessions] = useState([]);
   const [isUpcoming, setIsUpcoming] = useState(true);
   const [isPast, setIsPast] = useState(false);
-  const [isMessages, setIsMessages] = useState(false);
   const [visibleDate, setVisibleDate] = useState(null);
   const [validDates, setValidDates] = useState([]);
 
@@ -42,7 +39,6 @@ export default function AppointmentsPage() {
   const openUpcoming = () => {
     setIsUpcoming(true);
     setIsPast(false);
-    setIsMessages(false);
     document.getElementById('upcoming').classList.add('active');
     document.getElementById('past').classList.remove('active');
     document.getElementById('messages').classList.remove('active');
@@ -51,7 +47,6 @@ export default function AppointmentsPage() {
   const openPast = () => {
     setIsUpcoming(false);
     setIsPast(true);
-    setIsMessages(false);
     document.getElementById('upcoming').classList.remove('active');
     document.getElementById('past').classList.add('active');
     document.getElementById('messages').classList.remove('active');
@@ -60,7 +55,6 @@ export default function AppointmentsPage() {
   const openMessages = () => {
     setIsUpcoming(false);
     setIsPast(false);
-    setIsMessages(true);
     document.getElementById('upcoming').classList.remove('active');
     document.getElementById('past').classList.remove('active');
     document.getElementById('messages').classList.add('active');
@@ -153,19 +147,6 @@ export default function AppointmentsPage() {
             {pastSessions.map((schedule, i) => {
               if (schedule.isBooked) {
                 return <Appointment key={i} schedule={schedule} status="past" visibleDate={visibleDate} />;
-              }
-              return null;
-            })}
-          </div>
-        )}
-        {isMessages && (
-          <div>
-            {upcomingSessions.map((schedule, i) => {
-              if (schedule.isBooked && schedule.rescheduledByClient) {
-                return <RequestToReschedule key={i} schedule={schedule} />;
-              }
-              if (schedule.isBooked && schedule.rescheduledByMhp) {
-                return <RescheduleAccept key={i} schedule={schedule} />;
               }
               return null;
             })}
