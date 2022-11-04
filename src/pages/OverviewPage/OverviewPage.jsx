@@ -29,8 +29,8 @@ function Overview({ enqueueSnackbar }) {
     workDescription: '',
   };
   const date = new Date();
-  const user = JSON.parse(localStorage.getItem('profile')).user;
-  const firstName = user.displayName?.split(' ')[0];
+  // const user = JSON.parse(localStorage.getItem('profile')).user;
+  // const firstName = user.displayName?.split(' ')[0];
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const profile = JSON.parse(localStorage.getItem('profile'));
@@ -49,12 +49,14 @@ function Overview({ enqueueSnackbar }) {
     navigate('/auth');
   };
 
-  useEffect(() => {
-    if (profile.user.userType !== 'MHP') {
-      enqueueSnackbar('You are not a MHP. Please head over to raahee.in', { variant: 'error' });
-      logout();
-    }
-  }, [profile]);
+  // useEffect(() => {
+  //   if (profile.user.userType !== 'MHP') {
+  //     enqueueSnackbar('You are not a MHP. Please head over to raahee.in', {
+  //       variant: 'error',
+  //     });
+  //     logout();
+  //   }
+  // }, [profile]);
 
   function onDateChanged(event) {
     setVisibleDate(event.value);
@@ -85,38 +87,23 @@ function Overview({ enqueueSnackbar }) {
 
   return (
     <div className="overviewPage" id="dialog-target-workEx">
-      <h1 className="overview__heading">
-        Welcome
-        {' '}
-        {firstName}
-        ,
-      </h1>
+      <h1 className="overview__heading">Welcome Aditi ,</h1>
       <h2 className="overview__tagline">Monitor all your appointments here.</h2>
       <div className="overview__mhp">
         <div>
-          <img src={user.image ? user.image.url : avatar} alt="Test" className="image-size" />
+          <img
+            src={avatar}
+            alt="Test"
+            className="image-size"
+          />
         </div>
         <div className="overview__content">
-          <div className="profile-name">{user.displayName}</div>
-          <div className="designation">{user.kindOfProfessional}</div>
-          <div className="experience">
-            {user.experience}
-            {' '}
-            yrs. experience
-          </div>
+          <div className="profile-name">Aditi Tiwari</div>
+          <div className="designation">Event Manager</div>
+          <div className="experience">2</div>
           <div className="price-div">
-            <span className="price">
-              ₹
-              {' '}
-              {user.fees}
-            </span>
-            <span className="">
-              &nbsp;for
-              {' '}
-              {user.sessionDuration}
-              {' '}
-              minutes
-            </span>
+            <span className="price">₹ 20,000</span>
+            {/* <span className="">&nbsp;for {user.sessionDuration} minutes</span> */}
           </div>
         </div>
       </div>
@@ -164,13 +151,11 @@ function Overview({ enqueueSnackbar }) {
         <div>
           <p>
             <DegreesIcon />
-            {user.degrees ? user.degrees.split('$').join(', ') : null}
+            Bachelor of Technology
           </p>
           <p>
             <LanguagesIcon />
-            Speaks
-            {' '}
-            {user.languages ? user.languages.split('$').join(', ') : null}
+            Speaks English
           </p>
           <p>
             <SpecializationsIcon />
@@ -178,25 +163,34 @@ function Overview({ enqueueSnackbar }) {
           </p>
         </div>
         <ul className="specialList">
-          {user.speciality ? user.speciality.split('$').map((domain, i) => (
-            <li key={i} className="specialisations">
+          {/* {user.speciality
+            ? user.speciality.split('$').map((domain, i) => (
+                <li key={i} className="specialisations">
+                  &nbsp;
+                  <span>{domain}</span>
+                </li>
+              ))
+            : null} */}
+          {[...Array(5)].map((_) => (
+            <li className="specialisations">
               &nbsp;
-              <span>
-                {domain}
-              </span>
+              <span>Pure Veg</span>
             </li>
-          )) : null}
+          ))}
         </ul>
         <div className="user-info-div">
-          <p>
-            {user.bio}
-          </p>
+          <p>bleh</p>
         </div>
       </div>
       <div id="time-slots-outer-div">
         <div className="overview-subheading">
           <p>Available Time Slots</p>
-          <button className="overview-btn" onClick={() => navigate('/schedule')}>Edit Time Slots</button>
+          <button
+            className="overview-btn"
+            onClick={() => navigate('/schedule')}
+          >
+            Edit Time Slots
+          </button>
         </div>
         <div className="overview-table-div">
           <div className="overview-component-header">
@@ -212,50 +206,95 @@ function Overview({ enqueueSnackbar }) {
               />
             </div>
             <div className="icons-div purple">
-              <input type="checkbox" name="therapy" onChange={handleSlotsVisibility} checked={visibleSlots.therapy} />
+              <input
+                type="checkbox"
+                name="therapy"
+                onChange={handleSlotsVisibility}
+                checked={visibleSlots.therapy}
+              />
               <span>1hr</span>
             </div>
             <div className="icons-div orange">
-              <input type="checkbox" name="consultation" onChange={handleSlotsVisibility} checked={visibleSlots.consultation} />
+              <input
+                type="checkbox"
+                name="consultation"
+                onChange={handleSlotsVisibility}
+                checked={visibleSlots.consultation}
+              />
               <span>15min</span>
             </div>
           </div>
           <div className="slots-display-div">
             {visibleSlots.therapy && (
               <div className="hour-slots-div">
-                {schedules.filter((item) => {
-                  const date = moment(item.startTime.toString()).local().format('MMM DD YYYY');
-                  const currD = moment(visibleDate.toString()).local().format('MMM DD YYYY');
-                  return (date === currD && item.sessionType === 'Therapy Session');
-                }).map((item) => {
-                  return <div key={item.startTime} className="slot">{moment(item.startTime.toString()).local().format('LT')}</div>;
-                })}
+                {schedules
+                  .filter((item) => {
+                    const date = moment(item.startTime.toString())
+                      .local()
+                      .format('MMM DD YYYY');
+                    const currD = moment(visibleDate.toString())
+                      .local()
+                      .format('MMM DD YYYY');
+                    return (
+                      date === currD && item.sessionType === 'Therapy Session'
+                    );
+                  })
+                  .map((item) => {
+                    return (
+                      <div key={item.startTime} className="slot">
+                        {moment(item.startTime.toString()).local().format('LT')}
+                      </div>
+                    );
+                  })}
               </div>
             )}
             {visibleSlots.consultation && (
               <div className="min-slots-div">
-                {schedules.filter((item) => {
-                  const date = moment(item.startTime.toString()).local().format('MMM DD YYYY');
-                  const currD = moment(visibleDate.toString()).local().format('MMM DD YYYY');
-                  return (date === currD && item.sessionType === 'Consultation Call');
-                }).map((item) => {
-                  return <div key={item.startTime} className="slot">{moment(item.startTime.toString()).local().format('LT')}</div>;
-                })}
+                {schedules
+                  .filter((item) => {
+                    const date = moment(item.startTime.toString())
+                      .local()
+                      .format('MMM DD YYYY');
+                    const currD = moment(visibleDate.toString())
+                      .local()
+                      .format('MMM DD YYYY');
+                    return (
+                      date === currD && item.sessionType === 'Consultation Call'
+                    );
+                  })
+                  .map((item) => {
+                    return (
+                      <div key={item.startTime} className="slot">
+                        {moment(item.startTime.toString()).local().format('LT')}
+                      </div>
+                    );
+                  })}
               </div>
             )}
           </div>
         </div>
       </div>
-      {visibilityDialog
-        && (
+      {visibilityDialog && (
+        // eslint-disable-next-line react/jsx-no-bind
+        <WorkExpDialog
           // eslint-disable-next-line react/jsx-no-bind
-          <WorkExpDialog handleDialogVisibility={handleDialogVisibility} exp={currExperience} />
-        )}
+          handleDialogVisibility={handleDialogVisibility}
+          exp={currExperience}
+        />
+      )}
 
       <div id="workEx-outer-div">
         <div className="overview-subheading">
           <p>Work Experience</p>
-          <button className="overview-btn" onClick={() => { setCurrExperience(expObject); setVisibilityDialog(true); }}>Add Experience</button>
+          <button
+            className="overview-btn"
+            onClick={() => {
+              setCurrExperience(expObject);
+              setVisibilityDialog(true);
+            }}
+          >
+            Add Experience
+          </button>
         </div>
         <div className="overview-table-div">
           <div className="workEx-body">
@@ -268,7 +307,6 @@ function Overview({ enqueueSnackbar }) {
           </div>
         </div>
       </div>
-
     </div>
   );
 }

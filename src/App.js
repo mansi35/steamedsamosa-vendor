@@ -32,11 +32,27 @@ function App() {
           <Sidebar />
           <Routes>
             <Route exact path="/auth" element={<Auth />} />
-            <Route exact path="/" element={<ProtectedRoute component={Overview} />} />
-            <Route exact path="/appointments" element={<ProtectedRoute component={AppointmentsPage} />} />
-            <Route exact path="/edit-profile" element={<ProtectedRoute component={EditProfilePage} />} />
-            <Route exact path="/schedule" element={<ProtectedRoute component={SchedulePage} />} />
-            <Route exact path="/wallet" element={<ProtectedRoute component={WalletPage} />} />
+            <Route exact path="/" element={<Overview />} />
+            <Route
+              exact
+              path="/appointments"
+              element={<ProtectedRoute component={AppointmentsPage} />}
+            />
+            <Route
+              exact
+              path="/edit-profile"
+              element={<ProtectedRoute component={EditProfilePage} />}
+            />
+            <Route
+              exact
+              path="/schedule"
+              element={<ProtectedRoute component={SchedulePage} />}
+            />
+            <Route
+              exact
+              path="/wallet"
+              element={<ProtectedRoute component={WalletPage} />}
+            />
           </Routes>
         </div>
       </Router>

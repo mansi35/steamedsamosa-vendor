@@ -5,16 +5,20 @@ import { DialogComponent } from '@syncfusion/ej2-react-popups';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import InsertInvitationIcon from '@mui/icons-material/InsertInvitation';
 import './Appointments.scss';
-import { useDispatch } from 'react-redux';
-import { cancelRequestReschedule, requestReschedule } from '../../actions/schedule';
+// import { useDispatch } from 'react-redux';
+// import { cancelRequestReschedule, requestReschedule } from '../../actions/schedule';
 
 export default function Appointment({ schedule, status, visibleDate }) {
   const user = JSON.parse(localStorage.getItem('profile'))?.user;
-  let urlName = user.displayName.trim().toLowerCase().replace(/[\W_]+/g, '-') + '-';
+  let urlName = user.displayName
+    .trim()
+    .toLowerCase()
+    .replace(/[\W_]+/g, '-') + '-';
   urlName += user.id;
   const [visibility, setDialogVisibility] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState({ display: 'none' });
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const gapi = window.gapi;
   const CLIENT_ID = process.env.REACT_APP_CALENDAR_CLIENT_ID;
   const API_KEY = process.env.REACT_APP_CALENDAR_API_KEY;
@@ -42,7 +46,9 @@ export default function Appointment({ schedule, status, visibleDate }) {
           const calendarEvent = {
             summary: `Raahee: ${schedule.user.displayName}'s appointment with ${user.displayName}`,
             location: 'Online',
-            description: `$Join the meeting through this link: ${user.meetUrl ? user.meetUrl : ''}`,
+            description: `$Join the meeting through this link: ${
+              user.meetUrl ? user.meetUrl : ''
+            }`,
             start: {
               dateTime: `${new Date(schedule.startTime).toISOString()}`,
               timeZone: 'Asia/Kolkata',
@@ -80,38 +86,38 @@ export default function Appointment({ schedule, status, visibleDate }) {
     });
   };
 
-  const sendRescheduleRequest = (scheduleId) => {
-    setLoading({ display: 'inline' });
-    dispatch(requestReschedule(scheduleId))
-      .then(() => {
-        setLoading({ display: 'none' });
-        setDialogVisibility(false);
-      });
-  };
+  // const sendRescheduleRequest = (scheduleId) => {
+  //   setLoading({ display: 'inline' });
+  //   dispatch(requestReschedule(scheduleId)).then(() => {
+  //     setLoading({ display: 'none' });
+  //     setDialogVisibility(false);
+  //   });
+  // };
 
-  const cancelRescheduleRequest = (scheduleId) => {
-    setLoading({ display: 'inline' });
-    dispatch(cancelRequestReschedule(scheduleId))
-      .then(() => {
-        setLoading({ display: 'none' });
-        setDialogVisibility(false);
-      });
-  };
+  // const cancelRescheduleRequest = (scheduleId) => {
+  //   setLoading({ display: 'inline' });
+  //   dispatch(cancelRequestReschedule(scheduleId)).then(() => {
+  //     setLoading({ display: 'none' });
+  //     setDialogVisibility(false);
+  //   });
+  // };
 
   const rescheduleFooter = () => {
     return (
       <button
         type="button"
         className="e-control e-btn e-lib rescheduleModal__button e-primary e-flat"
-        onClick={() => {
-          if (!schedule.rescheduleRequested) {
-            sendRescheduleRequest(schedule.id);
-          } else {
-            cancelRescheduleRequest(schedule.id);
-          }
-        }}
+        // onClick={() => {
+        //   if (!schedule.rescheduleRequested) {
+        //     sendRescheduleRequest(schedule.id);
+        //   } else {
+        //     cancelRescheduleRequest(schedule.id);
+        //   }
+        // }}
       >
-        {schedule.rescheduleRequested ? 'Cancel Reschedule Request' : 'Request to Reschedule'}
+        {schedule.rescheduleRequested
+          ? 'Cancel Reschedule Request'
+          : 'Request to Reschedule'}
         <Box sx={loading}>
           <CircularProgress style={{ color: '#FFFFFF' }} />
         </Box>
@@ -132,7 +138,13 @@ export default function Appointment({ schedule, status, visibleDate }) {
     <div className="appointment">
       <div className="appointmentBar">
         <div className="timings">
-          {!visibleDate && <h6>{moment(schedule.startTime.toString()).local().format('MMM DD YYYY')}</h6>}
+          {!visibleDate && (
+            <h6>
+              {moment(schedule.startTime.toString())
+                .local()
+                .format('MMM DD YYYY')}
+            </h6>
+          )}
           <h2>
             {moment(schedule.startTime.toString()).local().format('h:mm')}
             -
@@ -142,21 +154,37 @@ export default function Appointment({ schedule, status, visibleDate }) {
             <p onClick={() => handleClick()}>Reschedule</p>
           )}
           {status === 'upcoming' && schedule.rescheduleRequested && (
-            <p onClick={() => handleClick()} style={{ textDecoration: 'none', fontWeight: 300 }}>Reschedule Requested</p>
+            <p
+              onClick={() => handleClick()}
+              style={{ textDecoration: 'none', fontWeight: 300 }}
+            >
+              Reschedule Requested
+            </p>
           )}
         </div>
         <div className="clientDetails">
-          <Avatar src={schedule.user.image ? schedule.user.image.url : ''} alt="client profile photo" />
+          <Avatar
+            src={schedule.user.image ? schedule.user.image.url : ''}
+            alt="client profile photo"
+          />
           <h2>{schedule.user.displayName}</h2>
         </div>
         <div className="join">
           {status === 'upcoming' ? (
             <button>
-              <a href={user.meetUrl ? user.meetUrl : 'https://meet.google.com'}>Join Meet</a>
+              <a href={user.meetUrl ? user.meetUrl : 'https://meet.google.com'}>
+                Join Meet
+              </a>
             </button>
           ) : (
             <button>
-              <a href={`https://raahee.in/therapists/${urlName}`} target="_blank" rel="noreferrer">Reviews</a>
+              <a
+                href={`https://raahee.in/therapists/${urlName}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Reviews
+              </a>
             </button>
           )}
           {status === 'upcoming' && !schedule.rescheduleRequested && (
@@ -179,12 +207,19 @@ export default function Appointment({ schedule, status, visibleDate }) {
         className="reschedule__modal"
       >
         <div className="modal__clientProfile">
-          <img src={schedule.user.image ? schedule.user.image.url : ''} alt="client profile pic" />
+          <img
+            src={schedule.user.image ? schedule.user.image.url : ''}
+            alt="client profile pic"
+          />
           <h2>{schedule.user.displayName}</h2>
         </div>
         <div className="modal__clientSchedule">
           <AccessTimeIcon />
-          <h4>{moment(schedule.startTime.toString()).utc().format('MMMM DD, YYYY')}</h4>
+          <h4>
+            {moment(schedule.startTime.toString())
+              .utc()
+              .format('MMMM DD, YYYY')}
+          </h4>
           <div className="modal__clientTime">
             <h5>{moment(schedule.startTime.toString()).format('h:mma')}</h5>
             <div className="modal__timeBar" />

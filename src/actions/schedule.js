@@ -1,4 +1,9 @@
-import { CREATE_SCHEDULE, FETCH_SCHEDULE, UPDATE_SCHEDULE, DELETE_SCHEDULE } from '../constants/actionTypes';
+import {
+  CREATE_SCHEDULE,
+  FETCH_SCHEDULE,
+  UPDATE_SCHEDULE,
+  DELETE_SCHEDULE,
+} from '../constants/actionTypes';
 import * as api from '../api/index';
 
 export const getSchedule = (mhpId) => async (dispatch) => {
@@ -24,26 +29,6 @@ export const createSchedule = (schedule) => async (dispatch) => {
 export const updateSchedule = (scheduleId, schedule) => async (dispatch) => {
   try {
     const { data } = await api.updateSchedule(scheduleId, schedule);
-    console.log(data);
-    dispatch({ type: UPDATE_SCHEDULE, payload: data });
-  } catch (error) {
-    console.log(error.message);
-  }
-};
-
-export const requestReschedule = (scheduleId) => async (dispatch) => {
-  try {
-    const { data } = await api.requestReschedule(scheduleId);
-    console.log(data);
-    dispatch({ type: UPDATE_SCHEDULE, payload: data });
-  } catch (error) {
-    console.log(error.message);
-  }
-};
-
-export const cancelRequestReschedule = (scheduleId) => async (dispatch) => {
-  try {
-    const { data } = await api.cancelRequestReschedule(scheduleId);
     console.log(data);
     dispatch({ type: UPDATE_SCHEDULE, payload: data });
   } catch (error) {
