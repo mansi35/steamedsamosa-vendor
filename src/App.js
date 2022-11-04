@@ -7,7 +7,7 @@ import SchedulePage from './pages/SchedulePage/SchedulePage';
 import Overview from './pages/OverviewPage/OverviewPage';
 import EditProfilePage from './pages/EditProfilePage/EditProfilePage';
 import AppointmentsPage from './pages/AppointmentsPage/AppointmentsPage';
-import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+// import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import WalletPage from './pages/WalletPage/WalletPage';
 import Sidebar from './components/Sidebar/Sidebar';
 import { getSchedule } from './actions/schedule';
@@ -36,7 +36,8 @@ function App() {
             <Route
               exact
               path="/appointments"
-              element={<ProtectedRoute component={AppointmentsPage} />}
+              // element={<ProtectedRoute component={AppointmentsPage} />}
+              element={<AppointmentsPage />}
             />
             <Route
               exact
@@ -47,12 +48,13 @@ function App() {
             <Route
               exact
               path="/schedule"
-              element={<ProtectedRoute component={SchedulePage} />}
+              // element={<ProtectedRoute component={SchedulePage} />}
+              element={<SchedulePage />}
             />
             <Route
               exact
               path="/wallet"
-              element={<ProtectedRoute component={WalletPage} />}
+              element={<WalletPage />}
             />
           </Routes>
         </div>

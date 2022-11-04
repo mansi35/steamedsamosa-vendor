@@ -13,7 +13,7 @@
 
     .emailWarning {
         background-color: red;
-        color: #ffffff;
+        color: #FFF8EA;
         width: 100%;
         position: absolute;
         top: 0;
@@ -109,7 +109,7 @@
             }
     
             .btn-submit:hover{
-                background-color: $mhp-btn-hover-purple;
+                background-color: $mhp-btn-hover-blue;
             }
 
             input{
@@ -164,12 +164,12 @@
                 color: $mhp-inactive-input-grey;
                 font-weight: 500;
                 .signin-up-click{
-                    color: $mhp-btn-normal-purple;
+                    color: $mhp-btn-normal-blue;
                     cursor: pointer;
 
                     &:hover{
                         font-weight: 600;
-                        color: $mhp-btn-hover-purple;
+                        color: $mhp-btn-hover-blue;
                     }
                 }
             }
@@ -319,7 +319,7 @@
 
     @media  screen and (max-width: 800px) {
         .auth-div{
-            background-color: $mhp-bg-pink;
+            background-color: $mhp-bg-cream;
             width: 100%;
             height: 100%;
             padding: 30px 20px;
@@ -363,14 +363,14 @@
                     margin-top: 1px;
                     width: 100%;
                     box-sizing: border-box;
-                    background-color: $mhp-bg-pink;
+                    background-color: $mhp-bg-cream;
                     border: 1px solid $mhp-inactive-mobile-input-grey;
                     border-radius: 4px;
                     padding: 10px 20px;
                     font-size: 12px;
 
                     &:focus{
-                        border: 1px solid $mhp-btn-normal-purple;
+                        border: 1px solid $mhp-btn-normal-blue;
                     }
                 }
                 border-radius: 0;
@@ -393,7 +393,7 @@
                     align-items: center;
 
                     &:focus-within{
-                        border: 1px solid $mhp-btn-normal-purple;
+                        border: 1px solid $mhp-btn-normal-blue;
                     }
                     input{
                         margin: 0;
@@ -427,12 +427,12 @@
                     color: $mhp-inactive-input-grey;
                     font-weight: 500;
                     .signin-up-click{
-                        color: $mhp-btn-normal-purple;
+                        color: $mhp-btn-normal-blue;
                         cursor: pointer;
 
                         &:hover{
                             font-weight: 600;
-                            color: $mhp-btn-hover-purple;
+                            color: $mhp-btn-hover-blue;
                         }
                     }
                 }

@@ -217,7 +217,7 @@ $gray-input-color: #727272;
       p{
         font-weight: 600;
         font-size: 20px;
-        color: $mhp-dark-purple;
+        color: $mhp-dark-blue;
         @include font-poppin;
         @media screen and (max-width: 640px) {
           font-size: 16px;
@@ -231,7 +231,7 @@ $gray-input-color: #727272;
          padding: 10px 20px;
          @include animate-hover;
          &:hover{
-           background-color: $mhp-btn-hover-purple;
+           background-color: $mhp-btn-hover-blue;
          }
          @media screen and (max-width: 640px) {
           font-size: 14px;
@@ -280,7 +280,7 @@ $gray-input-color: #727272;
         }
 
         .purple{
-          color: $mhp-btn-normal-purple;
+          color: $mhp-btn-normal-blue;
           font-weight: 500;
         }
 
@@ -307,11 +307,11 @@ $gray-input-color: #727272;
           display: flex;
           flex-wrap: wrap;
           .slot{
-            border-color: $mhp-btn-normal-purple;
-            color: $mhp-btn-normal-purple;
+            border-color: $mhp-btn-normal-blue;
+            color: $mhp-btn-normal-blue;
 
             // &:hover{
-            //   background-color: $mhp-btn-hover-purple-slots;
+            //   background-color: $mhp-btn-hover-blue-slots;
             // }
           }
         }
