@@ -41,7 +41,8 @@ function App() {
             <Route
               exact
               path="/edit-profile"
-              element={<ProtectedRoute component={EditProfilePage} />}
+              // element={<ProtectedRoute component={EditProfilePage} />}
+              element={<EditProfilePage />}
             />
             <Route
               exact

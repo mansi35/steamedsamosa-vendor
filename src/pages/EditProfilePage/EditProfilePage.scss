@@ -4,6 +4,7 @@ $gray-input-color: #A9A9A9;
 .editProfilePage {
   width: 100%;
   padding: 60px 80px;
+  background-color: #FFF8EA;
 
   .MuiCircularProgress-root {
     height: 12px !important;
@@ -19,7 +20,7 @@ $gray-input-color: #A9A9A9;
     width: 100%;
 
     button{
-      background: #AB70CA;
+      background: #FFF8EA;
       border: none;
       padding: 10px 25px;
       border-radius: 5px;
@@ -33,7 +34,7 @@ $gray-input-color: #A9A9A9;
   }
   
   .overview__heading {
-    color: #381D59;
+    color: #0E2B41;
     font-size:35px;
     font-weight: bold;
   }
@@ -59,9 +60,18 @@ $gray-input-color: #A9A9A9;
     .editProfile__input {
       width: 50%;
     }
+    .editProfile__input__location {
+      width: 33%;
+    }
+    .editProfile__address {
+      font-size: 10px;
+    }
 
     @media screen and (max-width: 640px) {
       .editProfile__input {
+        width: 100%;
+      }
+      .editProfile__input__location {
         width: 100%;
       }
     }
@@ -82,7 +92,7 @@ $gray-input-color: #A9A9A9;
     }
 
     .image-edit {
-      background: #AB70CA;
+      background: #0E2B41;
       border: none;
       text-decoration: none;
       color: white;
@@ -109,6 +119,8 @@ $gray-input-color: #A9A9A9;
   }
 
   .editProfile__specialization {
+    display: flex;
+    flex-direction: column;
     padding: 10px 0;
   }
 
@@ -118,7 +130,7 @@ $gray-input-color: #A9A9A9;
 
   .input-control-field {
     width: 90%;
-    background-color: #FBF2F4;
+    background-color: #FFF8EA;
     border: 2px solid $gray-input-color;
     padding: 10px;
     border-radius: 5px;
@@ -129,7 +141,9 @@ $gray-input-color: #A9A9A9;
 
   .input-control-chip-field {
     width: 94%;
-    background-color: #FBF2F4;
+    background-color: #FFF8EA;
+    border: 1px solid $gray-input-color;
+    color: $gray-theme-color;
     border-radius: 5px;
     font-size: 16px;
     margin-top: 7px;
@@ -138,27 +152,24 @@ $gray-input-color: #A9A9A9;
     }
   }
 
-  .about {
-    font-size: 24px;
-    font-weight: 700;
-    color: $gray-theme-color;
-  }
-
   .specialization__field {
     margin-top: 8px;
+    border: 1px solid $gray-input-color;
+    color: $gray-theme-color;
+    border-radius: 5px;
     * {
       font-family: Poppins;
     }
   }
 
   .specialization {
-    background: #FFFFFF;
-    border: 1px solid #AB70CA;
+    background: #FFF8EA;
+    border: 1px solid #A9A9A9;
     box-sizing: border-box;
     border-radius: 16px;
     font-size: 19.32px;
     font-weight: 500;
-    color: #AA66CC;
+    color: #0E2B41;
   }
 
   .description {
@@ -169,4 +180,9 @@ $gray-input-color: #A9A9A9;
     border-radius: 5px;
     font-family: Poppins;
   }
+}
+
+.css-53tbrc-MuiSlider-root {
+  color: #A9A9A9 !important;
+  width: 50% !important;
 }
