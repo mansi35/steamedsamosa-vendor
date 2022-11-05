@@ -15,7 +15,7 @@ $gray-input-color: #727272;
   }
 
   .overview__heading {
-    color: #381D59;
+    color: #0E2B41;
     font-size:35px;
     font-weight: 600;
     margin-bottom: 0;
@@ -69,13 +69,13 @@ $gray-input-color: #727272;
       }
       .active {
         padding: 7px 0;
-        border-bottom: 3px solid #381D59;
+        border-bottom: 3px solid #0E2B41;
       }
     }
     a{
       font-family: Poppins;
       text-decoration: none;
-      color: #381D59;
+      color: #0E2B41;
       font-size: 16px;
       font-weight: 700;
       cursor: pointer;
@@ -88,7 +88,7 @@ $gray-input-color: #727272;
     }
     a:hover {
       padding: 7px 0;
-      border-bottom: 3px solid #381D59;
+      border-bottom: 3px solid #0E2B41;
     }
   }
   
@@ -197,8 +197,8 @@ $gray-input-color: #727272;
     padding: 8px;
     border-radius: 20px;
     background-color: transparent;
-    color: #aa66cc;
-    border: 2px solid #aa66cc;
+    color: #0E2B41;
+    border: 2px solid #0E2B41;
     display: flex;
     @media screen and (max-width: 640px) {
       font-size: 12px;
@@ -242,7 +242,7 @@ $gray-input-color: #727272;
 
     .overview-table-div{
       margin-top: 10px;
-      border: 1px solid #AB70CA;
+      border: 1px solid #0E2B41;
       border-radius: 16px;
       .workEx-body{
         padding: 5px 20px;
@@ -257,7 +257,7 @@ $gray-input-color: #727272;
         padding: 5px 20px;
         border-radius: 16px 16px 0 0;
         background-color: #FFFFFF;
-        border-bottom: 1px solid #AB70CA;
+        border-bottom: 1px solid #0E2B41;
         font-weight: 500;
         .table-header-date{
           font-weight: 600;
