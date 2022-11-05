@@ -1,3 +1,17 @@
+.schedule {
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    .heading {
+        font-size: 42px;
+        font-weight: 600;
+    } 
+    .text {
+        font-weight: 600;
+        font-size: 24px;
+        color: #898989;
+    }
+}
 .schedulePage {
     width: 100%;
     height: 100vh;
@@ -28,4 +42,8 @@
             padding-bottom: 0;
         }
     }
+}
+
+.e-appointment-details {
+    background-color: #780000;
 }
