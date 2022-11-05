@@ -85,7 +85,7 @@ export default function AppointmentsPage() {
   return (
     <div className="AllAppointments" id="dialog-target">
       <div style={{ width: '100%' }}>
-        <h1>Appointments</h1>
+        <h1>Bookings</h1>
         <div className="appointments__navbar">
           <div className="appointments__links">
             <span id="upcoming" className="active" onClick={openUpcoming} role="button">Upcoming</span>

@@ -49,7 +49,7 @@ function Sidebar({ enqueueSnackbar }) {
           >
             <div role="banner" onClick={toggleSidebar}>
               <EventNoteIcon />
-              <p>Appointments</p>
+              <p>Bookings</p>
             </div>
           </NavLink>
           <NavLink

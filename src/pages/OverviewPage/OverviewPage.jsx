@@ -88,7 +88,7 @@ function Overview({ enqueueSnackbar }) {
   return (
     <div className="overviewPage" id="dialog-target-workEx">
       <h1 className="overview__heading">Welcome Aditi ,</h1>
-      <h2 className="overview__tagline">Monitor all your appointments here.</h2>
+      <h2 className="overview__tagline">Monitor all your bookings here.</h2>
       <div className="overview__mhp">
         <div>
           <img
